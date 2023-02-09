@@ -49,7 +49,10 @@ gem "sassc-rails"
 gem "jquery-rails"
 
 # Device Authentication Gem
-gem 'devise'
+gem "devise"
+
+# Gem in order to use bootstrap_form
+gem 'bootstrap_form'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
