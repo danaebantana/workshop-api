@@ -21,3 +21,7 @@
 // Partials - main css files
 @import "partials/*";
 @import "partials/layout/*";
+
+// Base variables and default styles 
+@import "base/variables";
+@import "base/default";
