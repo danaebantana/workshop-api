@@ -67,6 +67,8 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
+  
+  # required in order to be able to test JavaScript with capybara
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma
 
