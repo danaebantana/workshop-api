@@ -52,7 +52,7 @@ gem "jquery-rails"
 gem "devise"
 
 # Gem in order to use bootstrap_form
-gem 'bootstrap_form'
+gem "bootstrap_form"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -75,7 +75,13 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "rspec-rails", "~> 3.6"
+  gem "factory_girl_rails"
+  gem "rails-controller-testing"
+  gem "headless"
+  gem "capybara"
+  gem "poltergeist"
+  gem "database_cleaner"
 end
