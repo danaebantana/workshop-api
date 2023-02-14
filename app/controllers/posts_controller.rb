@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   private
 
+  # Return data for the specific page, depending on the action’s name
   def posts_for_branch(branch)
     @categories = Category.where(branch: branch)
     @posts = get_posts.paginate(page: params[:page])
