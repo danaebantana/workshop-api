@@ -34,6 +34,20 @@
     }
   }
 }
+
+.page-name {
+  margin: 15px 0px 15px 0px;
+  text-align: center;
+  background-color: white !important;
+  font-weight: bold;
+  a {
+    color: black;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
 .single-post-card {
   min-height: 135px;
   max-height: 135px;
