@@ -61,6 +61,9 @@ gem "bootstrap_form"
 # Gem for generating dummy text
 gem "faker"
 
+# Way to manage data between JavaScript
+gem 'gon'
+
 # Gem for pagination
 gem 'will_paginate', '~> 3.3.0'
 
