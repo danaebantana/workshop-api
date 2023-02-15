@@ -64,6 +64,9 @@ gem "faker"
 # Way to manage data between JavaScript
 gem 'gon'
 
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails'
+
 # Gem for pagination
 gem 'will_paginate', '~> 3.3.0'
 
