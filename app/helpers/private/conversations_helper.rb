@@ -34,6 +34,10 @@ module Private::ConversationsHelper
     end
   end
 
+  def get_contact_record(recipient)
+    contact = Contact.find_by_users(current_user.id, recipient.id)
+  end
+
   private
 
   def recipient_is_contact?
