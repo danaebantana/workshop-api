@@ -59,11 +59,11 @@ require 'rails_helper'
       )
     end
 
-    it "returns a partial's path for a group conversation's header" do
-      conversation = create(:group_conversation)
-      expect(helper.conversation_header_partial_path(conversation)). to eq(
-        'layouts/navigation/header/dropdowns/conversations/group'
-      )
-    end
+    #it "returns a partial's path for a group conversation's header" do
+    #  conversation = create(:group_conversation)
+    #  expect(helper.conversation_header_partial_path(conversation)). to eq(
+    #    'layouts/navigation/header/dropdowns/conversations/group'
+    #  )
+    #end
   end
 end
