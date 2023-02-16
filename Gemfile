@@ -29,7 +29,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -60,6 +60,12 @@ gem "bootstrap_form"
 
 # Gem for generating dummy text
 gem "faker"
+
+# Way to manage data between JavaScript
+gem 'gon'
+
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails'
 
 # Gem for pagination
 gem 'will_paginate', '~> 3.3.0'
