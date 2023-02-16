@@ -51,6 +51,14 @@ RSpec.describe Private::ConversationsHelper, type: :helper do
     end
   end
 
+  context '#get_contact_record' do
+    it 'returns a Contact record' do
+      contact = create(:contact, user_id: current_user.id, contact_id: recipient.id)
+      helper.stub(:current_user).and_return(current_user)
+      expect(helper.get_contact_record(recipient)).to eq contact
+    end
+  end
+
   context 'private scope' do
     let(:current_user) { create(:user) }
     let(:recipient) { create(:user) }
