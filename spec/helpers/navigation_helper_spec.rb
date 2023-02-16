@@ -50,4 +50,20 @@ require 'rails_helper'
       expect(helper.nav_header_content_partials).to eq partials
     end
   end
+
+  context '#conversation_header_partial_path' do
+    it "returns a partial's path for a private conversation's header" do
+      conversation = create(:private_conversation)
+      expect(helper.conversation_header_partial_path(conversation)). to eq(
+        'layouts/navigation/header/dropdowns/conversations/private'
+      )
+    end
+
+    it "returns a partial's path for a group conversation's header" do
+      conversation = create(:group_conversation)
+      expect(helper.conversation_header_partial_path(conversation)). to eq(
+        'layouts/navigation/header/dropdowns/conversations/group'
+      )
+    end
+  end
 end
