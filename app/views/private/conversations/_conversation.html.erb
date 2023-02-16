@@ -11,6 +11,7 @@
 
     <!-- Conversation window's content -->
     <div class="panel-body">
+      <%= render 'private/conversations/conversation/request_status' %>
       <%= render 'private/conversations/conversation/messages_list', 
                   conversation: conversation %>
       <%= render 'private/conversations/conversation/new_message_form', 
