@@ -26,4 +26,28 @@ require 'rails_helper'
     end
   end
 
+  context '#nav_header_content_partials' do
+    it "returns messenger_header partial's path" do
+      controller.params[:controller] = 'messengers'
+      partials = ['layouts/navigation/header/messenger_header']
+      expect(helper.nav_header_content_partials).to eq partials
+    end
+
+    it "returns partials' paths for buttons without dropdowns" do
+      controller.params[:controller] = 'not_messengers'
+      view.stub(:user_signed_in?).and_return(false)
+      partials = ['layouts/navigation/header/toggle_button']
+      partials << 'layouts/navigation/header/home_button'
+      expect(helper.nav_header_content_partials).to eq partials
+    end
+
+    it "returns partials' paths for buttons and dropdowns" do
+      controller.params[:controller] = 'not_messengers'
+      view.stub("user_signed_in?").and_return(true)
+      partials = ['layouts/navigation/header/toggle_button']
+      partials << 'layouts/navigation/header/home_button'
+      partials << 'layouts/navigation/header/dropdowns'
+      expect(helper.nav_header_content_partials).to eq partials
+    end
+  end
 end
