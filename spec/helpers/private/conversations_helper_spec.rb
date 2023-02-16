@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Private::ConversationsHelper, type: :helper do
+  let(:current_user) { create(:user) }
+  let(:recipient) { create(:user) }
+
   context '#load_private_messages' do
     let(:conversation) { create(:private_conversation) }
 
