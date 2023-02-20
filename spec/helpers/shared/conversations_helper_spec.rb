@@ -47,7 +47,7 @@ RSpec.describe Shared::ConversationsHelper, :type => :helper do
       create(:group_message, conversation_id: conversation.id)
       current_user = create(:user)
       view.stub(:current_user).and_return(current_user)
-      expect(helper.group_conv_seen_status(conversation)).to eq(
+      expect(helper.group_conv_seen_status(conversation,current_user)).to eq(
         'unseen-conv'
       )
     end
@@ -57,7 +57,7 @@ RSpec.describe Shared::ConversationsHelper, :type => :helper do
       conversation = create(:group_conversation)
       create(:group_message, conversation_id: conversation.id, user_id: user.id)
       view.stub(:current_user).and_return(user)
-      expect(helper.group_conv_seen_status(conversation)).to eq ''
+      expect(helper.group_conv_seen_status(conversation,user)).to eq ''
     end
 
     it 'returns an empty string' do
@@ -67,7 +67,7 @@ RSpec.describe Shared::ConversationsHelper, :type => :helper do
       message.seen_by << user.id
       message.save
       view.stub(:current_user).and_return(user)
-      expect(helper.group_conv_seen_status(conversation)).to eq ''
+      expect(helper.group_conv_seen_status(conversation,user)).to eq ''
     end
   end
 end
