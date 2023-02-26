@@ -17,7 +17,9 @@ tasks:
       gp sync-done installs
     openMode: split-left
   - name: create database & start server
-    init: gp sync-await installs
+    init: |
+      gp sync-await installs && 
+      bin/rails db:migrate RAILS_ENV=development
     command: |
       rake db:create
       rails server -b 0.0.0.0
